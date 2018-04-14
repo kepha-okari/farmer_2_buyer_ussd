@@ -80,22 +80,22 @@ def callback(request):
             response = "CON Enter the price per Kg\n. e.g. 50, 100, 1000"
             return HttpResponse(response, content_type='text/plain')
 
-        # if level == 6:
-        #     session_level7 = User.objects.get(phonenumber = phoneNumber)
-        #     session_level7.level=7
-        #     product = Product.objects.create(type_of_product=textList[0],name=textList[4], quantity=textList[5], price=textList[6], user=user)
-        #     product.save()
-        #     response = "END Your request has been received. \n We will send you a message with contact details of a buyer/seller that matches your request."
-        #     # this are variables to be used by the generate details section
-        #     current_product = textList[4].lower()
-        #     current_price = textList[6]
-        #     current_town = textList[3].lower()
-        #     current_location = textList[2].lower()
-        #     current_phonenumber = phoneNumber
-        #     current_type = textList[0]
-        #
-        #     # this is the message generator section that determines the message that will be sent to the current user
-        #     requested_products = Product.requested_products(current_product)
+        if level == 6:
+            session_level7 = User.objects.get(phonenumber = phoneNumber)
+            session_level7.level=7
+            product = Product.objects.create(type_of_product=textList[0],name=textList[4], quantity=textList[5], price=textList[6], user=user)
+            product.save()
+            response = "END Your request has been received. \n We will send you a message with contact details of a buyer/seller that matches your request."
+            # this are variables to be used by the generate details section
+            current_product = textList[4].lower()
+            current_price = textList[6]
+            current_town = textList[3].lower()
+            current_location = textList[2].lower()
+            current_phonenumber = phoneNumber
+            current_type = textList[0]
+
+            # this is the message generator section that determines the message that will be sent to the current user
+            requested_products = Product.requested_products(current_product)
 
 
             # this is a list of products which satisfy the price requirements of the user
