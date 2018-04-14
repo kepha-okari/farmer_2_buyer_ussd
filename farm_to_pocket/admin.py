@@ -1,3 +1,5 @@
-from django.contrib import admin
+from django.apps import AppConfig
 
-# Register your models here.
+
+class FarmToPocketConfig(AppConfig):
+    name = 'farm_to_pocket'
