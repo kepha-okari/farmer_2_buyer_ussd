@@ -24,6 +24,8 @@ def requested_location(location, list_price):
     '''
     Method that filters based on the location of the current user and returns a list of users matching that creteria
     '''
+    # list_location = [product for product in list_price if product.user.location == location]
+
     list_location = []
     for product in list_price:
         if product.user.location == location:
